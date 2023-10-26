@@ -10,6 +10,8 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $table = 'product';
+
     public static function NewProducts() {
         $sNow = date('Y-m-d H:i:s');
         $sNextWeek = date('Y-m-d H:i:s', strtotime($sNow . ' + 1 week'));
