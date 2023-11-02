@@ -17,6 +17,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ $product->name }}</h5>
                       <p class="card-text"> <strong>{{ $product->price - ($product->price * $product->discountPercent / 100)  }}€</strong> <s>{{ $product->price }}€</s></p>
+                      <a class="btn btn-primary" href="{{route('product.show', $product)}}">Ver más</a>
                     </div>
                   </div>
                 </div>
