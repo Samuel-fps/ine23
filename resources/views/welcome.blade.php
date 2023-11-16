@@ -12,7 +12,7 @@
             <div class="row">
               @foreach($aProduct_offering as $product)
                 <div class="col-3">
-                  <div class="card d-flex justify-content-center align-items-center">
+                  <div class="card centrado">
                     <img src="{{ $product->imgUrl }}" class="card-img-top imagen" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{ $product->name }}</h5>
@@ -31,7 +31,7 @@
           <div class="row">
             @foreach($aProduct_new as $product)
               <div class="col-3">
-                <div class="card d-flex justify-content-center align-items-center">
+                <div class="card centrado">
                   <img src="{{ $product->imgUrl }}" class="card-img-top imagen" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>

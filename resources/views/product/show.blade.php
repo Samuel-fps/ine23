@@ -8,19 +8,19 @@
         <!-- LAYOUT: CENTER -->
         <div class="row p-5">
           <div class="col-12">
-            <div class="card d-flex justify-content-center align-items-center">
+            <div class="card centrado">
               <img src="../{{ $product->imgUrl }}" class="card-img-top imagen-detalles" alt="Product Image">
               <div class="card-body">
-                <h5 class="card-title">{{ $product->name }}</h5>
-                <p>Company: {{ $product->company->name }}</p>
+                <h4 class="card-title">{{ $product->name }}</h4>
+                <p>Editora: {{ $product->company->name }}</p>
                 <p class="card-text">{{ $product->description }}</p>
                 @if ($product->hasDiscount())
                   <p class="card-text">
-                    Discounted Price: {{ "PRECIO DESCUENTO"}}€
+                    Precio descontado: {{ "PRECIO DESCUENTO"}}€
                     <s>{{ $product->price }}€</s>
                   </p>
                 @else
-                  <p class="card-text">Price: {{ $product->price }}€</p>
+                  <p class="card-text">Precio: {{ $product->price }}€</p>
                 @endif
                 <!-- Bootstrap Button with href Route::get('/addToCart/{product}', [ProductController::class], 'addToCart')->name('cart.add'); -->
                 <a href="{{ route('cart.add', $product->id) }}" class="btn btn-primary">Añadir al carrito</a>

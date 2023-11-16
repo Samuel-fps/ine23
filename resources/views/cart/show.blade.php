@@ -44,7 +44,7 @@
     <div class="col-3">
       <!-- LAYOUT: RIGHT -->
       <!-- Aquí puedes agregar el total de productos y el precio total -->
-      <div class="mt-4">
+      <div class="mt-4 card centrado">
         <h4>Total de Productos: {{ $cart->iTotalItems }}</h4>
         <h4>Precio Total: {{ $cart->dTotalPrice }}€</h4>
       </div>

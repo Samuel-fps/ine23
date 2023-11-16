@@ -11,6 +11,13 @@
       background: #aaa;
     }
 
+    .centrado {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
     .imagen {
       width: 15rem;
     }
@@ -20,11 +27,11 @@
     }
 
     .imagen-chica {
-      width: 5rem;
+      width: 10rem;
     }
 
     h4 {
-      font-size: 300%;
+      font-size: 200%;
     }
 
     .verde {
