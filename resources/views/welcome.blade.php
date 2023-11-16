@@ -41,6 +41,7 @@
                         <p class="card-text"> <strong>{{ $product->price }}€</strong></p>
                     @endif
                   </p>
+                  <a class="btn btn-primary" href="{{route('product.show', $product)}}">Ver más</a>
                   </div>
                 </div>
               </div>

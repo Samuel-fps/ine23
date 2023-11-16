@@ -19,19 +19,23 @@ class Cart extends Model
         }
     }
     public function add(Product $product){
-        if(!array_key_exists($product->id, $this->htItem)){
+        $realPrice = $product->hasDiscount()
+        ? $product->price - ($product->price * $product->discountPercent / 100)
+        : $product->price;      
+         
+        if(!array_key_exists($product->id, $this->htItem)){    
             $this->htItem[$product->id] = [
                 'id' => $product->id,
                 'name' => $product->name,
                 'imgUrl' => $product->imgUrl,
-                'price' => $product->price,
+                'price' => $realPrice,
                 'quantity' => 1
             ];
         }else{
             $this->htItem[$product->id]['quantity']++;
         }
         $this->iTotalItems++;
-        $this->dTotalPrice += $product->price;
+        $this->dTotalPrice += $realPrice;
     }
     public function remove(Product $product){
         if(array_key_exists($product->id, $this->htItem)){

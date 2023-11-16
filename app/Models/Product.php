@@ -11,6 +11,9 @@ use App\Models\Company;
 class Product extends Model
 {
     use HasFactory;
+
+    protected $table = 'product';
+
     public static function Offerings()
     {
         $currentTime = date('Y-m-d H:i:s');
