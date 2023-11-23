@@ -11,8 +11,28 @@
             </div>
         </div>
         <div class="col-6"></div>
-        <div class="col-2 d-flex justify-content-center align-items-center">
-            <a href="{{ route('cart.show') }}" class="d-flex align-items-center text-decoration-none">
+        <div class="col-2 d-flex justify-content-end align-items-center">
+            @auth
+                {{-- Usuario autenticado --}}
+                <div class="d-flex align-items-center">
+                    <a href="{{ route('dashboard') }}" class="text-decoration-none">
+                        <p class="mb-0">{{ Auth::user()->name }}</p>
+                    </a>
+                    
+                    {{-- Botón de desconexión --}}
+                    <form method="POST" action="{{ route('user.logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-link text-danger">X</button>
+                    </form>
+                </div>
+            @else
+                {{-- Usuario no autenticado --}}
+                <a href="{{ route('login') }}" class="text-decoration-none">
+                    <p class="mb-0">Autenticación</p>
+                </a>
+            @endauth
+
+            <a href="{{ route('cart.show') }}" class="d-flex align-items-center text-decoration-none ml-3">
                 <p class="mb-0"><i class="glyphicon glyphicon-shopping-cart"></i></p>
                 @php
                     // Obtén la instancia del carrito desde la sesión
@@ -26,4 +46,3 @@
         </div>
     </div>
 </div>
-
