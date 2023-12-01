@@ -31,4 +31,8 @@ return [
     'Log in' => 'Iniciar sesión',
     'Log out' => 'Cerrar sesión',
     'Reset Password' => 'Restablecer contraseña',
+    'Old password' => 'Antigua contraseña',
+    'New password' => 'Nueva contraseña',
+    'Repeat password' => 'Repetir contraseña',
+    'Save' => 'Guardar',
 ];

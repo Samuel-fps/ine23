@@ -15,7 +15,7 @@
             @auth
                 {{-- Usuario autenticado --}}
                 <div class="d-flex align-items-center">
-                    <a href="{{ route('dashboard') }}" class="text-decoration-none">
+                    <a href="{{ route('user.edit') }}" class="text-decoration-none">
                         <p class="mb-0">{{ Auth::user()->name }}</p>
                     </a>
                     
